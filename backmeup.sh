@@ -200,7 +200,7 @@ function collect() {
 # |         GOSPIDER    |
 # ╰─────────────────────╯
                 trap dotraps SIGINT SIGPIPE SIGTERM SIGHUP
-                gospider -s "https://${target}" --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" --quiet --depth 5 --concurrent 80 --threads 100 --delay 1 --random-delay 1 --timeout 10 --js --robots --other-source --include-subs --include-other-source --subs --sitemap --no-redirect --raw 2> /dev/null | anew -q ${BASE_DIR}/output/${target}_$(date -I)/${target}_gospider.txt &> /dev/null &
+                gospider -s "https://${target}"  --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" --depth 5 --concurrent 80 --threads 100 --delay 1 --random-delay 1 --timeout 10 --robots --other-source --include-subs --include-other-source --sitemap --no-redirect | anew -q ${BASE_DIR}/output/${target}_$(date -I)/${target}_gospider.txt &> /dev/null &
                 emoticons "gospider"
 # ╭─────────────────────╮
 # |         CRAWLEY     |
